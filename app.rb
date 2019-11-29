@@ -23,7 +23,7 @@ enable :sessions
     @month = session[:month]
     @todays_month = TodaysDate.new.convert_to_month(Date.today.to_s.split(' ').join.split('-')[1])
     @todays_day = Date.today.to_s.split(' ').join.split('-')[2]
-    @time_difference = TimeDifference.new(@month, @day)
+    @time_difference = TimeDifference.new.check(@month, @day)
     erb :greeting
   end
 

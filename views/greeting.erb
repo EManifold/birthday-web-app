@@ -1,10 +1,6 @@
 
-
-<h1>Happy Birthday <%= @name %>
-
-
-<h1>
-<%= @day %> <%= @month %>
-<%= @todays_day %> <%= @todays_month %>
-
-<%= @time_difference %>
+<% if @day == @todays_day && @month == @todays_month %>
+<h1>Happy Birthday <%= @name %> </h1>
+<% else %>
+<h1> Your birthday will be in <%= @time_difference %> days <%= @name %> </h1>
+<% end %>
